@@ -116,14 +116,15 @@ function initModals() {
   document.querySelectorAll("[data-media]").forEach(trigger => {
     trigger.addEventListener("click", () => {
       const img = trigger.querySelector("img");
-      if (!img || !img.naturalWidth) return; // image still pending
+      const src = trigger.dataset.src || (img && img.naturalWidth ? img.src : '');
+      if (!src) return; // image still pending
 
       const title = trigger.getAttribute("data-title") || "";
       document.getElementById("modal-media-title").textContent = title;
       const frame = document.createElement("div");
       frame.className = "border border-primary bg-white p-1";
       const big = document.createElement("img");
-      big.src = img.src;
+      big.src = src;
       big.alt = title;
       big.className = "w-full h-auto object-contain block max-h-[70vh]";
       frame.appendChild(big);
@@ -210,7 +211,7 @@ function initInquiryForm() {
 }
 
 /**
- * Scroll motion: sections fade up, heading rules draw, figures wipe in.
+ * Scroll motion: sections fade up, heading rules draw, figures draw themselves.
  * Skipped entirely for visitors who prefer reduced motion.
  */
 function initMotion() {
@@ -234,7 +235,7 @@ function initMotion() {
   stagger([...document.querySelectorAll('#ventures article')]);
   stagger([...document.querySelectorAll('#the-profile .grid > div')], 'reveal', 0.14);
   stagger([...document.querySelectorAll('#in-the-field figure')], 'reveal', 0.1);
-  stagger([...document.querySelectorAll('#in-the-field .broadsheet-frame')], 'wipe', 0.1);
+  initDrawnFigures();
   stagger([...document.querySelectorAll('#about p')], 'reveal', 0.12);
   stagger([...document.querySelectorAll('#inquiries .grid > div, #inquiries form')], 'reveal', 0.1);
 
@@ -242,11 +243,66 @@ function initMotion() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in');
-        // a fully clipped element never counts as visible, so the wipe rides on its figure
-        entry.target.querySelectorAll('.wipe').forEach((w) => w.classList.add('in'));
+        // the drawing starts when its figure scrolls into view
+        entry.target.querySelectorAll('.draw-svg').forEach((s) => s.classList.add('in'));
         io.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.reveal, .rule-draw').forEach((el) => io.observe(el));
+}
+
+/**
+ * "In The Field" diagrams draw themselves: outlines trace in, rules sweep across,
+ * labels fade in reading order. Each SVG is fetched and inlined so CSS can animate
+ * its parts; if that fails the plain <img> stays in place.
+ */
+function initDrawnFigures() {
+  document.querySelectorAll('#in-the-field figure[data-media]').forEach(async (figure) => {
+    const img = figure.querySelector('img');
+    if (!img) return;
+    const src = img.getAttribute('src');
+    try {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error(res.status);
+      const doc = new DOMParser().parseFromString(await res.text(), 'image/svg+xml');
+      const svg = document.importNode(doc.documentElement, true);
+      if (svg.nodeName !== 'svg') throw new Error('not svg');
+
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
+      svg.setAttribute('class', 'draw-svg absolute inset-0 w-full h-full block');
+      svg.setAttribute('role', 'img');
+      svg.setAttribute('aria-label', img.alt);
+
+      const frame = img.parentElement;
+      frame.querySelectorAll('span').forEach((s) => s.remove()); // "IMAGE PENDING" label
+      img.replaceWith(svg);
+      figure.dataset.src = src;
+      figure.classList.add('cursor-pointer');
+      if (figure.classList.contains('in')) svg.classList.add('in'); // figure was already on screen
+
+      let i = 0;
+      svg.querySelectorAll('rect, path, circle, text').forEach((el) => {
+        const delay = Math.min(i * 0.022, 1.7).toFixed(2) + 's';
+        const stroked = el.hasAttribute('stroke') && el.getAttribute('stroke') !== 'none';
+        const filled = el.getAttribute('fill') !== 'none';
+        el.style.setProperty('--d', delay);
+        if (el.tagName === 'text' || el.hasAttribute('stroke-dasharray')) {
+          el.classList.add('d-text');
+        } else if (stroked) {
+          el.style.setProperty('--len', el.getTotalLength());
+          el.classList.add('d-stroke');
+          if (filled) el.classList.add('d-fill');
+        } else if (el.tagName === 'rect' && +el.getAttribute('height') <= 6) {
+          el.classList.add('d-rule');
+        } else if (+el.getAttribute('width') < 1280) { // skip the full-bleed paper background
+          el.classList.add('d-fill');
+        }
+        i++;
+      });
+    } catch (err) {
+      /* keep the static <img> */
+    }
+  });
 }

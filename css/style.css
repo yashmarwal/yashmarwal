@@ -272,12 +272,19 @@
     transition: transform 0.9s cubic-bezier(0.6, 0, 0.2, 1);
   }
   html.js .rule-draw.in { transform: scaleX(1); }
-  html.js .wipe {
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 1s cubic-bezier(0.6, 0, 0.2, 1);
-    transition-delay: var(--d, 0s);
-  }
-  html.js .wipe.in { clip-path: inset(0 0 0 0); }
+  /* In The Field: diagrams draw themselves (see initDrawnFigures) */
+  html.js .draw-svg .d-stroke { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+  html.js .draw-svg .d-fill { fill-opacity: 0; }
+  html.js .draw-svg .d-text { opacity: 0; }
+  html.js .draw-svg .d-rule { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); }
+  html.js .draw-svg.in .d-stroke { animation: svg-draw 0.9s cubic-bezier(0.5, 0, 0.2, 1) forwards; animation-delay: var(--d, 0s); }
+  html.js .draw-svg.in .d-fill { animation: svg-fill 0.5s ease forwards; animation-delay: calc(var(--d, 0s) + 0.55s); }
+  html.js .draw-svg.in .d-text { animation: svg-fill-text 0.5s ease forwards; animation-delay: calc(var(--d, 0s) + 0.35s); }
+  html.js .draw-svg.in .d-rule { animation: svg-rule 0.8s cubic-bezier(0.6, 0, 0.2, 1) forwards; animation-delay: var(--d, 0s); }
+  @keyframes svg-draw { to { stroke-dashoffset: 0; } }
+  @keyframes svg-fill { to { fill-opacity: 1; } }
+  @keyframes svg-fill-text { to { opacity: 1; } }
+  @keyframes svg-rule { to { transform: scaleX(1); } }
 }
 
 @media (prefers-reduced-motion: reduce) {
