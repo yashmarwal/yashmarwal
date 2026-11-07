@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initModals();
   initInquiryForm();
+  initMotion();
 });
 
 /**
@@ -82,14 +83,22 @@ function initNavigation() {
     });
   });
 
-  // Mobile menu trigger toggle
+  // Mobile menu: a newspaper page turning down from the masthead (see css/style.css)
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileNav = document.getElementById('mobile-nav');
   if (mobileMenuBtn && mobileNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
+    const icon = document.getElementById('mobile-menu-icon');
+    const setOpen = (open) => {
+      mobileNav.classList.toggle('open', open);
+      mobileMenuBtn.setAttribute('aria-expanded', String(open));
+      if (icon) icon.textContent = open ? 'close' : 'menu';
+    };
+    mobileNav.querySelectorAll('a').forEach((a, i) => {
+      a.style.setProperty('--i', i);
+      a.addEventListener('click', () => setOpen(false));
     });
-    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.add('hidden')));
+    mobileMenuBtn.addEventListener('click', () => setOpen(!mobileNav.classList.contains('open')));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   }
 }
 
@@ -198,4 +207,46 @@ function initInquiryForm() {
       button.textContent = label;
     }
   });
+}
+
+/**
+ * Scroll motion: sections fade up, heading rules draw, figures wipe in.
+ * Skipped entirely for visitors who prefer reduced motion.
+ */
+function initMotion() {
+  const root = document.documentElement;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    root.classList.remove('js');
+    return;
+  }
+
+  const stagger = (nodes, cls = 'reveal', step = 0.09) =>
+    nodes.forEach((el, i) => { el.classList.add(cls); el.style.setProperty('--d', `${i * step}s`); });
+
+  document.querySelectorAll('main > div > section:not(:first-of-type)').forEach((section) => {
+    const head = section.querySelector(':scope > div');
+    if (head) {
+      stagger([...head.querySelectorAll('h2, h2 + span, :scope > div:first-child > span')], 'reveal', 0.08);
+      stagger([...head.querySelectorAll('.h-1, .h-px')], 'rule-draw', 0.12);
+    }
+  });
+
+  stagger([...document.querySelectorAll('#ventures article')]);
+  stagger([...document.querySelectorAll('#the-profile .grid > div')], 'reveal', 0.14);
+  stagger([...document.querySelectorAll('#in-the-field figure')], 'reveal', 0.1);
+  stagger([...document.querySelectorAll('#in-the-field .broadsheet-frame')], 'wipe', 0.1);
+  stagger([...document.querySelectorAll('#about p')], 'reveal', 0.12);
+  stagger([...document.querySelectorAll('#inquiries .grid > div, #inquiries form')], 'reveal', 0.1);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        // a fully clipped element never counts as visible, so the wipe rides on its figure
+        entry.target.querySelectorAll('.wipe').forEach((w) => w.classList.add('in'));
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal, .rule-draw').forEach((el) => io.observe(el));
 }

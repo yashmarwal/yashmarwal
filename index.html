@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>document.documentElement.classList.add('js')</script>
   <title>Yash Marwal — Entrepreneur & Founder, New Delhi</title>
   <meta name="description" content="Yash Marwal is a New Delhi entrepreneur building Phaseline, Optimeta, and Banao Buzz — ventures that digitalise and modernise Indian B2B businesses."/>
   
@@ -53,14 +54,14 @@
           <a class="nav-link transition-colors text-on-surface-variant hover:text-on-surface" data-path="about" href="#about">About</a>
           <a class="nav-link transition-colors text-on-surface-variant hover:text-on-surface" data-path="inquiries" href="#inquiries">Contact</a>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none" aria-label="Toggle Navigation Menu">
-          <span class="material-symbols-outlined text-2xl">menu</span>
+        <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span id="mobile-menu-icon" class="material-symbols-outlined text-2xl">menu</span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-nav" class="hidden md:hidden bg-surface border-b border-primary px-4 py-1 text-left font-label-md uppercase tracking-wider text-xs">
+    <div id="mobile-nav" class="md:hidden bg-surface border-b border-primary px-4 py-1 text-left font-label-md uppercase tracking-wider text-xs">
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#front-page">Front Page</a>
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#ventures">Ventures</a>
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#the-profile">The Profile</a>
@@ -77,14 +78,14 @@
       <!-- MASTHEAD -->
       <header id="front-page" class="w-full pt-6 pb-2 border-b border-primary">
         <div class="text-center py-2">
-          <h1 class="font-headline text-[48px] sm:text-[68px] md:text-[84px] lg:text-[102px] leading-none tracking-tight uppercase font-medium text-primary select-none">
+          <h1 style="--d:.05s" class="load-in font-headline text-[48px] sm:text-[68px] md:text-[84px] lg:text-[102px] leading-none tracking-tight uppercase font-medium text-primary select-none">
             Yash Marwal
           </h1>
         </div>
         <!-- Thin Rule -->
-        <div class="w-full h-px bg-outline-variant my-1"></div>
+        <div style="--d:.35s" class="load-rule w-full h-px bg-outline-variant my-1"></div>
         <!-- Dateline Row -->
-        <div class="flex flex-wrap items-center justify-between font-caption-mono text-caption-mono text-secondary py-1 tracking-wider uppercase text-xs">
+        <div style="--d:.5s" class="load-in flex flex-wrap items-center justify-between font-caption-mono text-caption-mono text-secondary py-1 tracking-wider uppercase text-xs">
           <div class="flex items-center gap-2">
             <span class="font-bold text-primary">DELHI, INDIA</span>
             <span>•</span>
@@ -97,7 +98,7 @@
           </div>
         </div>
         <!-- Second Rule (Closing Double Rule) -->
-        <div class="w-full h-px bg-primary mt-0.5"></div>
+        <div style="--d:.65s" class="load-rule w-full h-px bg-primary mt-0.5"></div>
       </header>
 
       <!-- FRONT-PAGE HERO -->
@@ -106,20 +107,20 @@
           <!-- Left 65% (8 Cols) -->
           <div class="lg:col-span-8 flex flex-col justify-between">
             <div>
-              <div class="inline-flex items-center gap-2 mb-3">
+              <div style="--d:.7s" class="load-in inline-flex items-center gap-2 mb-3">
                 <span class="w-2 h-2 bg-on-tertiary-container inline-block"></span>
                 <span class="font-kicker text-kicker uppercase text-on-tertiary-container tracking-widest font-bold">
                   Lead Story • The Founder's Desk
                 </span>
               </div>
-              <h2 class="font-headline text-headline-xl text-primary font-normal leading-[1.05] tracking-tight mb-5 max-w-3xl text-3xl sm:text-4xl md:text-5xl">
+              <h2 style="--d:.85s" class="load-in font-headline text-headline-xl text-primary font-normal leading-[1.05] tracking-tight mb-5 max-w-3xl text-3xl sm:text-4xl md:text-5xl">
                 Yash Marwal is an entrepreneur modernising Indian B2B businesses.
               </h2>
-              <p class="font-headline text-headline-md italic font-normal text-secondary leading-snug mb-6 max-w-2xl text-xl">
+              <p style="--d:1s" class="load-in font-headline text-headline-md italic font-normal text-secondary leading-snug mb-6 max-w-2xl text-xl">
                 Founder of Phaseline, Optimeta, and Banao Buzz — three ventures digitalising Indian manufacturers, exporters, and small businesses.
               </p>
             </div>
-            <div class="pt-4 border-t border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div style="--d:1.15s" class="load-in pt-4 border-t border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <span class="font-caption-mono text-caption-mono uppercase tracking-wider text-primary font-bold text-xs">
                 BY YASH MARWAL • DISPATCH FROM NEW DELHI
               </span>
@@ -127,7 +128,7 @@
           </div>
 
           <!-- Right 35% (4 Cols) Boxed Sidebar -->
-          <div class="lg:col-span-4 border border-primary p-5 bg-surface-container-lowest">
+          <div style="--d:1s" class="load-in lg:col-span-4 border border-primary p-5 bg-surface-container-lowest">
             <div class="flex items-center justify-between pb-2 border-b border-on-tertiary-container">
               <span class="font-caption-mono text-caption-mono font-bold tracking-widest uppercase text-primary text-xs">
                 AT A GLANCE

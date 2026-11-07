@@ -170,3 +170,119 @@
     filter: grayscale(100%) !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Motion. Everything below only applies when JS has marked <html class="js">
+   and the visitor has not asked for reduced motion, so content is never
+   hidden by default.
+------------------------------------------------------------------- */
+
+/* Nav: animated underline */
+.nav-link { position: relative; }
+.nav-link:not(.active)::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+.nav-link:not(.active):hover::after { transform: scaleX(1); }
+
+/* Venture cards and contact links: small lift / nudge */
+#ventures article h3 { transition: transform 0.28s ease; }
+#ventures article:hover h3 { transform: translateX(5px); }
+#inquiries a { transition: letter-spacing 0.25s ease, color 0.2s ease; }
+#inquiries a:hover { letter-spacing: 0.08em; }
+
+/* Lightbox opening */
+#media-modal.flex { animation: fade-in 0.25s ease; }
+#media-modal.flex .modal-box { animation: pop-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+/* Mobile menu: a newspaper page turning down from the masthead edge */
+#mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform-origin: top center;
+  transform: perspective(900px) rotateX(-96deg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 14px 22px -10px rgba(28, 28, 23, 0.45);
+  background-image: linear-gradient(180deg, rgba(244, 238, 225, 1) 0%, rgba(233, 227, 213, 1) 100%);
+  transition: transform 0.65s cubic-bezier(0.22, 0.8, 0.24, 1), opacity 0.25s ease 0.1s, visibility 0s linear 0.65s;
+}
+#mobile-nav::after { /* paper shading that clears as the page lies flat */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(28, 28, 23, 0.55), rgba(28, 28, 23, 0));
+  opacity: 1;
+  transition: opacity 0.65s ease;
+}
+#mobile-nav.open {
+  transform: perspective(900px) rotateX(0deg);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform 0.65s cubic-bezier(0.22, 0.8, 0.24, 1), opacity 0.2s ease, visibility 0s;
+}
+#mobile-nav.open::after { opacity: 0; }
+#mobile-nav a {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#mobile-nav.open a { opacity: 1; transform: none; transition-delay: calc(0.28s + var(--i, 0) * 0.05s); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Page load: masthead rules draw, headline lines rise */
+  html.js .load-in {
+    opacity: 0;
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    animation-delay: var(--d, 0s);
+  }
+  html.js .load-rule {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: draw 0.9s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes draw { to { transform: scaleX(1); } }
+
+  /* Scroll: sections fade up, rules draw, figures wipe in */
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--d, 0s);
+  }
+  html.js .reveal.in { opacity: 1; transform: none; }
+  html.js .rule-draw {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.9s cubic-bezier(0.6, 0, 0.2, 1);
+  }
+  html.js .rule-draw.in { transform: scaleX(1); }
+  html.js .wipe {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s cubic-bezier(0.6, 0, 0.2, 1);
+    transition-delay: var(--d, 0s);
+  }
+  html.js .wipe.in { clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobile-nav { transform: none; transition: opacity 0.2s ease, visibility 0s linear 0.2s; }
+  #mobile-nav.open { transition: opacity 0.2s ease; }
+  #mobile-nav::after { display: none; }
+  #mobile-nav a { opacity: 1; transform: none; transition: none; }
+}
