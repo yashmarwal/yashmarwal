@@ -61,6 +61,7 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav-wrap" class="md:hidden absolute top-full left-0 w-full overflow-hidden">
     <div id="mobile-nav" class="md:hidden bg-surface border-b border-primary px-4 py-1 text-left font-label-md uppercase tracking-wider text-xs">
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#front-page">Front Page</a>
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#ventures">Ventures</a>
@@ -68,6 +69,7 @@
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#in-the-field">In The Field</a>
       <a class="block py-3 border-b border-outline-variant text-on-surface-variant hover:text-on-surface" href="#about">About</a>
       <a class="block py-3 text-on-surface-variant hover:text-on-surface" href="#inquiries">Contact</a>
+    </div>
     </div>
   </header>
 
@@ -78,7 +80,7 @@
       <!-- MASTHEAD -->
       <header id="front-page" class="w-full pt-6 pb-2 border-b border-primary">
         <div class="text-center py-2">
-          <h1 style="--d:.05s" class="load-in font-headline text-[48px] sm:text-[68px] md:text-[84px] lg:text-[102px] leading-none tracking-tight uppercase font-medium text-primary select-none">
+          <h1 style="--d:.05s" class="load-in font-headline whitespace-nowrap text-[length:min(48px,calc((100vw_-_32px)_/_7.7))] sm:text-[68px] md:text-[84px] lg:text-[102px] leading-none tracking-tight uppercase font-medium text-primary select-none">
             Yash Marwal
           </h1>
         </div>
@@ -86,7 +88,7 @@
         <div style="--d:.35s" class="load-rule w-full h-px bg-outline-variant my-1"></div>
         <!-- Dateline Row -->
         <div style="--d:.5s" class="load-in flex flex-wrap items-center justify-between font-caption-mono text-caption-mono text-secondary py-1 tracking-wider uppercase text-xs">
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 whitespace-nowrap text-[length:min(12px,calc((100vw_-_32px)_/_27))]">
             <span class="font-bold text-primary">DELHI, INDIA</span>
             <span>•</span>
             <span>FOUNDER EDITION</span>
@@ -109,7 +111,7 @@
             <div>
               <div style="--d:.7s" class="load-in inline-flex items-center gap-2 mb-3">
                 <span class="w-2 h-2 bg-on-tertiary-container inline-block"></span>
-                <span class="font-kicker text-kicker uppercase text-on-tertiary-container tracking-widest font-bold">
+                <span class="font-kicker text-kicker uppercase text-on-tertiary-container tracking-widest font-bold whitespace-nowrap text-[length:min(16px,calc((100vw_-_52px)_/_21.8))]">
                   Lead Story • The Founder's Desk
                 </span>
               </div>
@@ -121,9 +123,13 @@
               </p>
             </div>
             <div style="--d:1.15s" class="load-in pt-4 border-t border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span class="font-caption-mono text-caption-mono uppercase tracking-wider text-primary font-bold text-xs">
+              <span class="font-caption-mono text-caption-mono uppercase tracking-wider text-primary font-bold whitespace-nowrap text-[length:min(12px,calc((100vw_-_32px)_/_27.5))]">
                 BY YASH MARWAL • DISPATCH FROM NEW DELHI
               </span>
+            </div>
+            <div style="--d:1.3s" class="load-in hidden lg:block mt-5">
+              <span class="font-kicker text-kicker uppercase text-secondary tracking-wider block mb-2 text-xs font-bold">In Brief</span>
+              <p class="font-body-md text-body-md text-on-surface leading-relaxed text-justify drop-cap-initial max-w-2xl">Yash Marwal is a New Delhi entrepreneur working to digitalise and modernise Indian B2B businesses through three ventures: Phaseline, a software and systems company; Optimeta, an AI growth platform for manufacturers and exporters; and Banao Buzz, a GST billing and business toolkit for small businesses.</p>
             </div>
           </div>
 
@@ -168,7 +174,7 @@
                 </div>
               </div>
             </div>
-            <div class="pt-4 border-t border-outline-variant">
+            <div class="pt-4 border-t border-outline-variant lg:hidden">
               <span class="font-kicker text-kicker uppercase text-secondary tracking-wider block mb-2 text-xs font-bold">
                 In Brief
               </span>
@@ -211,7 +217,9 @@
                 <span class="font-caption-mono text-caption-mono text-secondary text-xs">DEPT: B2B SOFTWARE</span>
               </div>
               <h3 class="font-headline text-headline-lg text-primary font-serif font-medium leading-tight mb-2 text-3xl">
-                Phaseline
+                <a href="https://phaseline.in" target="_blank" rel="noopener noreferrer" class="venture-link inline-flex items-center gap-1.5 hover:underline underline-offset-4 decoration-1" aria-label="Phaseline (opens phaseline.in)">
+                  <span class="material-symbols-outlined text-xl leading-none" aria-hidden="true">arrow_outward</span>Phaseline
+                </a>
               </h3>
               <p class="font-body-md text-body-md text-on-surface leading-relaxed text-justify drop-cap-initial">
                 Custom software, business systems, and AI-powered tools for Indian B2B. Phaseline gives manufacturers, traders, and exporters the digital infrastructure to run, sell, and scale on one connected stack, and supports them after launch.
@@ -544,9 +552,9 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row items-center justify-between pt-4 border-t border-outline-variant text-on-surface-variant font-caption-mono text-caption-mono text-xs">
-        <p>© 2026 Yash Marwal. All rights reserved. Built in New Delhi.</p>
-        <p class="mt-2 md:mt-0" id="foot-today">Published in New Delhi</p>
+      <div class="flex flex-col lg:flex-row items-center justify-between pt-4 border-t border-outline-variant text-on-surface-variant font-caption-mono text-caption-mono text-xs">
+        <p class="whitespace-nowrap text-[length:min(12px,calc((100vw_-_32px)_/_37))]">© 2026 Yash Marwal. All rights reserved. Built in New Delhi.</p>
+        <p class="mt-2 lg:mt-0 whitespace-nowrap text-[length:min(12px,calc((100vw_-_32px)_/_33.5))]" id="foot-today">Published in New Delhi</p>
       </div>
     </div>
   </footer>

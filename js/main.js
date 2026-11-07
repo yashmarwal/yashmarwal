@@ -94,11 +94,15 @@ function initNavigation() {
       if (icon) icon.textContent = open ? 'close' : 'menu';
     };
     mobileNav.querySelectorAll('a').forEach((a, i) => {
-      a.style.setProperty('--i', i);
+      
       a.addEventListener('click', () => setOpen(false));
     });
     mobileMenuBtn.addEventListener('click', () => setOpen(!mobileNav.classList.contains('open')));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    // tapping anywhere outside the menu (and its button) closes it
+    document.addEventListener('click', (e) => {
+      if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) setOpen(false);
+    });
   }
 }
 
