@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+<rect width="1280" height="800" fill="#ffffff"/>
+<rect x="24" y="24" width="1232" height="752" fill="none" stroke="#000000" stroke-width="1.5"/>
+<text x="64" y="84" font-family="'Courier New', Courier, monospace" font-size="17" font-weight="700"  fill="#000000" letter-spacing="3">PHASELINE  •  SYSTEMS &amp; SOFTWARE</text>
+<text x="64" y="150" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="400"  fill="#000000" letter-spacing="0">Beyond the storefront</text>
+<rect x="64" y="176" width="1152" height="5" fill="#000000"/><rect x="64" y="186" width="1152" height="1.5" fill="#bdbdbd"/>
+<rect x="64" y="220" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="84" y="254" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">01</text>
+<text x="84" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Admin Panels</text>
+<text x="84" y="319" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">&amp; Dashboards</text>
+<rect x="84" y="335" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="84" y="365" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">Manage your data and content</text><text x="84" y="389" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">yourself.</text><rect x="356" y="220" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="376" y="254" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">02</text>
+<text x="376" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Lead &amp; Inquiry</text>
+<text x="376" y="319" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Management</text>
+<rect x="376" y="335" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="376" y="365" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">Status, notes and reminders</text><text x="376" y="389" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">on every enquiry.</text><rect x="648" y="220" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="668" y="254" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">03</text>
+<text x="668" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Membership &amp;</text>
+<text x="668" y="319" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Operations</text>
+<rect x="668" y="335" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="668" y="365" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">QR check-in, usage tracking,</text><text x="668" y="389" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">fee reminders.</text><rect x="940" y="220" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="960" y="254" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">04</text>
+<text x="960" y="292" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Booking &amp;</text>
+<text x="960" y="319" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Scheduling</text>
+<rect x="960" y="335" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="960" y="365" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">Appointments and classes,</text><text x="960" y="389" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">with waitlists and capacity</text><text x="960" y="413" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">limits.</text><rect x="64" y="456" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="84" y="490" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">05</text>
+<text x="84" y="528" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Custom</text>
+<text x="84" y="555" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Business Tools</text>
+<rect x="84" y="571" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="84" y="601" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">Built for one job, around</text><text x="84" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">your own process.</text><rect x="356" y="456" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="376" y="490" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">06</text>
+<text x="376" y="528" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">AI Assistant</text>
+<text x="376" y="555" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">(add-on)</text>
+<rect x="376" y="571" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="376" y="601" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">Answers customer questions</text><text x="376" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">from your own information.</text><rect x="648" y="456" width="276" height="220" fill="#fff" stroke="#000000" stroke-width="1.5"/>
+<text x="668" y="490" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#000000" letter-spacing="2">07</text>
+<text x="668" y="528" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Custom</text>
+<text x="668" y="555" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#000000" letter-spacing="0">Builds</text>
+<rect x="668" y="571" width="236" height="1.5" fill="#bdbdbd"/>
+<text x="668" y="601" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">Bespoke software for anything</text><text x="668" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#555555" letter-spacing="0">not listed.</text><rect x="940" y="456" width="276" height="220" fill="#000000" stroke="#000000" stroke-width="1.5"/>
+<text x="960" y="490" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="700"  fill="#fff" letter-spacing="2">08</text>
+<text x="960" y="528" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#fff" letter-spacing="0">Phaseline</text>
+<text x="960" y="555" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700"  fill="#fff" letter-spacing="0">Care</text>
+<rect x="960" y="571" width="236" height="1.5" fill="#777"/>
+<text x="960" y="601" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#ddd" letter-spacing="0">Monthly updates, security and</text><text x="960" y="625" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="400" font-style="italic" fill="#ddd" letter-spacing="0">uptime checks.</text>
+<rect x="64" y="708" width="1152" height="1.5" fill="#bdbdbd"/>
+<text x="64" y="746" font-family="'Courier New', Courier, monospace" font-size="16" font-weight="400"  fill="#555555" letter-spacing="1.5">CUSTOM BACK-OFFICE SYSTEMS FOR INDIAN B2B BUSINESSES</text>
+</svg>

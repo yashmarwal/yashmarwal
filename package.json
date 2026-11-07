@@ -1,0 +1,17 @@
+{
+  "name": "yash-marwal-portfolio",
+  "version": "1.0.0",
+  "description": "Yash Marwal — Broadsheet Editorial Portfolio & Dispatches",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 3030",
+    "start": "npx serve -l 3030",
+    "build": "node scripts/build.js"
+  },
+  "keywords": [],
+  "author": "Yash Marwal",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
