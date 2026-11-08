@@ -320,8 +320,9 @@ function initBrandSwap() {
   const masthead = document.querySelector('#front-page h1');
   if (!masthead || !('IntersectionObserver' in window)) return;
   const root = document.documentElement;
-  root.classList.add('brand-swap');
+  // 'brand-swap' is set by the inline script in <head> so the first paint is already correct
   new IntersectionObserver(([entry]) => {
     root.classList.toggle('past-masthead', !entry.isIntersecting);
+    requestAnimationFrame(() => root.classList.add('brand-ready'));
   }, { rootMargin: '-80px 0px 0px 0px' }).observe(masthead);
 }
