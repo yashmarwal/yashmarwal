@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initInquiryForm();
   initMotion();
+  initBrandSwap();
 });
 
 /**
@@ -309,4 +310,18 @@ function initDrawnFigures() {
       /* keep the static <img> */
     }
   });
+}
+
+/**
+ * The header shows "The Front Page" while the big masthead name is on screen,
+ * then switches to "Yash Marwal" once the masthead has scrolled under the header.
+ */
+function initBrandSwap() {
+  const masthead = document.querySelector('#front-page h1');
+  if (!masthead || !('IntersectionObserver' in window)) return;
+  const root = document.documentElement;
+  root.classList.add('brand-swap');
+  new IntersectionObserver(([entry]) => {
+    root.classList.toggle('past-masthead', !entry.isIntersecting);
+  }, { rootMargin: '-80px 0px 0px 0px' }).observe(masthead);
 }
