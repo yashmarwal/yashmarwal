@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInquiryForm();
   initMotion();
   initBrandSwap();
+  initFitLine();
 });
 
 /**
@@ -325,4 +326,25 @@ function initBrandSwap() {
     root.classList.toggle('past-masthead', !entry.isIntersecting);
     requestAnimationFrame(() => root.classList.add('brand-ready'));
   }, { rootMargin: '-80px 0px 0px 0px' }).observe(masthead);
+}
+
+/**
+ * Keeps a value on a single line next to its label by shrinking the font only as much
+ * as needed (used for the Ventures row in At a Glance).
+ */
+function initFitLine() {
+  const els = document.querySelectorAll("[data-fit]");
+  const fit = () => els.forEach((el) => {
+    el.style.fontSize = "";
+    const row = el.parentElement;
+    const label = el.previousElementSibling;
+    const gap = parseFloat(getComputedStyle(row).columnGap) || 0;
+    const room = row.clientWidth - label.offsetWidth - gap;
+    if (el.scrollWidth > room) {
+      el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * room / el.scrollWidth) + "px";
+    }
+  });
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts) document.fonts.ready.then(fit);
 }
