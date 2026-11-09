@@ -48,6 +48,7 @@ const sources = [
       console.log(name, buf.length, 'bytes, weights', weight);
     }
   }
+  css += fs.readFileSync(path.join(__dirname, 'icon-class.css'), 'utf8');
   fs.writeFileSync(path.join(root, 'css', 'fonts.css'), css);
   console.log('wrote css/fonts.css');
 })();

@@ -282,20 +282,3 @@ html.brand-swap .brand-name { opacity: 0; transform: translateY(100%); }
 html.brand-swap.past-masthead .brand-top { opacity: 0; transform: translateY(-100%); }
 html.brand-swap.past-masthead .brand-name { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { html.brand-ready #brand > span { transition: none; } }
-
-/* Material Symbols (self-hosted subset: arrow_outward, check_circle, close, menu) */
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
-}
