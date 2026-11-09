@@ -4,7 +4,7 @@ const fs = require('fs');
 execSync('npx tailwindcss -i src/input.css -o css/tailwind.css --minify', { stdio: 'inherit' });
 fs.rmSync('dist', { recursive: true, force: true });
 fs.mkdirSync('dist');
-['index.html', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'favicon.ico', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest', '404.html', '_headers', 'google01a25908dad60a19.html', 'css', 'js', 'images'].forEach(p => {
+['index.html', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'favicon.ico', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest', '404.html', '_headers', 'google01a25908dad60a19.html', 'css', 'js', 'images', 'fonts'].forEach(p => {
   if (fs.existsSync(p)) fs.cpSync(p, 'dist/' + p, { recursive: true });
 });
 console.log('dist/ ready');
