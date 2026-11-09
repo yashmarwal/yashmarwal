@@ -30,6 +30,7 @@
   <meta name="twitter:title" content="Yash Marwal — Entrepreneur &amp; Founder, New Delhi"/>
   <meta name="twitter:description" content="Building Phaseline, Optimeta, and Banao Buzz — ventures that digitalise and modernise Indian B2B businesses."/>
   <meta name="twitter:image" content="https://yashmarwal.pages.dev/images/og.png"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Yash Marwal","url":"https://yashmarwal.pages.dev/"}</script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Person",
@@ -62,11 +63,11 @@
   ]
 }</script>
 
-  <!-- Google Fonts & Material Symbols -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_outward,check_circle,close,menu" rel="stylesheet"/>
+  <!-- Fonts are self-hosted (scripts/fonts.js); the three used above the fold are preloaded -->
+  <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="preload" href="/fonts/space-mono-latin.woff2" as="font" type="font/woff2" crossorigin/>
+  <link rel="stylesheet" href="css/fonts.css"/>
 
   <!-- Compiled Tailwind (npm run build) -->
   <link rel="stylesheet" href="css/tailwind.css"/>
@@ -91,8 +92,8 @@
         </div>
       </div>
       <div class="flex items-center justify-between">
-        <a id="brand" class="font-headline-md text-headline-md font-semibold tracking-tight text-primary uppercase text-2xl" href="#front-page" aria-label="Yash Marwal, back to the front page">
-          <span class="brand-top" aria-hidden="true">Indian B2B</span>
+        <a id="brand" class="font-headline-md text-headline-md font-semibold tracking-tight text-primary uppercase text-2xl" href="#front-page">
+          <span class="brand-top">Indian B2B</span>
           <span class="brand-name">Yash Marwal</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 font-label-md text-label-md uppercase tracking-wider text-xs">
@@ -579,10 +580,10 @@
         <div class="flex flex-col gap-2">
           <span class="font-kicker text-kicker uppercase text-secondary font-bold text-xs">Departmental Index</span>
           <nav class="flex flex-col gap-1 font-caption-mono text-caption-mono text-on-surface-variant text-xs">
-            <a class="hover:text-on-surface" href="#front-page">01. Top Stories</a>
-            <a class="hover:text-on-surface" href="#ventures">02. Ventures</a>
-            <a class="hover:text-on-surface" href="#the-profile">03. The Profile</a>
-            <a class="hover:text-on-surface" href="#in-the-field">04. In The Field</a>
+            <a class="py-1.5 hover:text-on-surface" href="#front-page">01. Top Stories</a>
+            <a class="py-1.5 hover:text-on-surface" href="#ventures">02. Ventures</a>
+            <a class="py-1.5 hover:text-on-surface" href="#the-profile">03. The Profile</a>
+            <a class="py-1.5 hover:text-on-surface" href="#in-the-field">04. In The Field</a>
           </nav>
         </div>
         <div class="flex flex-col gap-2">
