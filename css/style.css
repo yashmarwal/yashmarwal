@@ -282,3 +282,6 @@ html.brand-swap .brand-name { opacity: 0; transform: translateY(100%); }
 html.brand-swap.past-masthead .brand-top { opacity: 0; transform: translateY(-100%); }
 html.brand-swap.past-masthead .brand-name { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { html.brand-ready #brand > span { transition: none; } }
+
+/* Anchor jumps stop just below the fixed header (80px) so each section heading stays visible */
+section[id], header[id] { scroll-margin-top: 5rem; }
