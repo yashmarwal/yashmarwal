@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx serve -l 3030",
     "start": "npx serve -l 3030",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "test:state": "node scripts/state-smoke.js"
   },
   "keywords": [],
   "author": "Yash Marwal",
